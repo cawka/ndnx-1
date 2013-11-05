@@ -1,0 +1,47 @@
+Format: http://dep.debian.net/deps/dep5
+Upstream-Name: ndnx
+Source: http://github.com/named-data/ndnx
+
+Files: *
+Copyright: 2013 Regents of the University of California.
+           2009-2013 Palo Alto Research Center, Inc.
+License: GPL-2+, LGPL-2+
+ This NDNx software is free software: some portions are distributed under the
+ GNU General Public License version 2 (GPL) and other portions are
+ distributed under the GNU Lesser General Public License version 2.1
+ (LGPL), both subject to exemptions given below.  Each file contains a
+ declaration near the beginning of the license that applies to it.
+ .
+ This software is released under the GPL and/or LPGL with the
+ additional exemption that compiling, linking, and/or using OpenSSL is
+ allowed.
+ .
+ Some third-party software is distributed together with the NDNx
+ software.  Please see the file README for notices concerning such
+ software.
+ .
+ For more information about NDNx licensing, please visit http://named-data.net. 
+ .
+ For more information about CCNx licensing, please visit http://www.ccnx.org.
+ .
+ The GPL and LGPL licenses are provided below in this file.  For more
+ information about these licenses, see http://www.gnu.org/licenses/.
+
+Files: debian/*
+Copyright: 2013 Alexander Afanasyev <alexander.afanasyev@ucla.edu>
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".

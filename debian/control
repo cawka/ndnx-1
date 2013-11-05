@@ -1,0 +1,29 @@
+Source: ndnx
+Priority: extra
+Maintainer: Alexander Afanasyev <alexander.afanasyev@ucla.edu>
+Build-Depends: debhelper (>= 8.0.0), 
+ javahelper (>=0.25), 
+ ant (>=1.8.0),
+ libssl-dev (>=0.0.1),
+ libpcap-dev (>=1.1.1),
+ libxml2-dev (>=2.7.8),
+ libexpat1-dev (>=2.0.1),
+ default-jdk
+Standards-Version: 3.9.2
+Section: libs
+Homepage: http://github.com/named-data/ndnx
+Vcs-Git: git://github.com/named-data/ndnx.git
+Vcs-Browser: http://github.com/named-data/ndnx
+
+Package: ndnx-dev
+Section: libdevel
+Architecture: i386 amd64
+Depends: ndnx (= ${binary:Version}), ${misc:Depends}
+Description: NDNx library and ndnd forwarding daemon
+
+Package: ndnx
+Section: libs
+Architecture: i386 amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${java:Depends}
+Recommends: ${java:Recommends}
+Description: NDNx library and ndnd forwarding daemon
