@@ -1,0 +1,31 @@
+description "NDN forwarding daemon"
+author      "Alexander Afanasyev <alexander.afanasyev@ucla.edu>"
+
+start on started ndnx
+stop  on stopping ndnx
+
+setuid ndnx
+setgid ndnx
+
+respawn
+
+env NDNR_DIRECTORY=/var/lib/ndnx/ndnr
+env NDNR_GLOBAL_PREFIX=
+
+pre-start script
+    # Override defaults, if needed
+    [ -r /etc/ndnx/ndndrc ] && . /etc/ndnx/ndndrc
+
+    # Don't start repo if NDNR_GLOBAL_PREFIX is empty
+    if [ "$NDNR_GLOBAL_PREFIX" = "" ]; then stop; exit 0; fi
+
+    # Create directory for repo
+    if [ ! -d "$NDNR_DIRECTORY" ]; then install -m 755 -d "$NDNR_DIRECTORY"; fi
+end script
+
+script
+    # Override defaults, if needed
+    [ -r /etc/ndnx/ndndrc ] && . /etc/ndnx/ndndrc
+
+    /usr/bin/ndnr
+end script

@@ -1,0 +1,25 @@
+description "NDN forwarding daemon"
+author      "Alexander Afanasyev <alexander.afanasyev@ucla.edu>"
+
+start on started network-services
+stop  on stopping network-services
+
+setuid ndnx
+setgid ndnx
+
+respawn
+
+env NDND_CAP=50000
+env NDND_DEBUG=0
+env HOME=/var/tmp
+
+script
+    [ -r /etc/ndnx/ndndrc ] && . /etc/ndnx/ndndrc
+    /usr/bin/ndnd
+end script
+
+post-start script
+    sleep 1
+    # Add routes from /etc/ndnd.conf if the file exists
+    [ -r /etc/ndnx/static-routes.conf ] && /usr/bin/ndndc -f /etc/ndnx/static-routes.conf
+end script

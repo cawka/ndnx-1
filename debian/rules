@@ -13,6 +13,8 @@ CFLAGS := $(shell dpkg-buildflags --get CFLAGS) -std=gnu99
 export INSTALL_BASE=/usr
 export INSTALL_MAN=/usr/share/man
 
+TMP=$(CURDIR)/debian/tmp
+
 %:
 	dh $@  --parallel
 
@@ -27,9 +29,11 @@ override_dh_clean:
 	  apps/include apps/conf.mk csrc/conf.mk
 
 override_dh_auto_install:
-	mkdir -p $(CURDIR)/debian/tmp/usr/share/man/man1 \
-		 $(CURDIR)/debian/tmp/usr/bin \
-		 $(CURDIR)/debian/tmp/usr/include \
-		 $(CURDIR)/debian/tmp/usr/lib
+	mkdir -p $(TMP)/usr/share/man/man1 \
+		 $(TMP)/usr/bin \
+		 $(TMP)/usr/include \
+		 $(TMP)/usr/lib \
+		 $(TMP)/etc/ndnx
 	dh_auto_install
-
+	cp debian/etc/ndnx/* $(TMP)/etc/ndnx/
+	rm $(TMP)/usr/bin/ndndstart $(TMP)/usr/bin/ndndstop

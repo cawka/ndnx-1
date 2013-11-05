@@ -1,3 +1,4 @@
+etc/ndnx/*
 usr/bin/*
 usr/lib/*.jar
 usr/share/man/man1/*

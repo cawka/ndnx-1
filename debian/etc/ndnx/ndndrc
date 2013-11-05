@@ -1,0 +1,92 @@
+#
+# Sample /etc/ndnx/ndndrc to set up environment variables for ndnd (daemon) and ndnr (repo)
+# and other NDN-related daemons
+#
+
+##################
+# ndnd parameters
+##################
+#
+# NDND_DEBUG=0
+#   0 - no messages
+#   1 - basic messages (any non-zero value gets these)
+#   2 - interest messages
+#   4 - content messages
+#   8 - matching details
+#   16 - interest details
+#   32 - gory interest details
+#   64 - log occasional human-readable timestamps
+#   128 - face registration debugging
+#   bitwise OR these together for combinations; -1 gets max logging
+# NDN_LOCAL_PORT=
+#   UDP port for unicast clients (default 9695).
+#   Also listens on this TCP port for stream connections.
+#   Also affects name of unix-domain socket.
+# NDN_LOCAL_SOCKNAME=
+#   Name stem of unix-domain socket (default /tmp/.ndnd.sock).
+# NDND_CAP=
+#   Capacity limit, in count of ContentObjects.
+#   Not an absolute limit.
+# NDND_MTU=
+#   Packet size in bytes.
+#   If set, interest stuffing is allowed within this budget.
+#   Single items larger than this are not precluded.
+# NDND_DATA_PAUSE_MICROSEC=
+#   Adjusts content-send delay time for multicast and udplink faces
+# NDND_DEFAULT_TIME_TO_STALE=
+#   Default for content objects without explicit FreshnessSeconds
+# NDND_MAX_TIME_TO_STALE=
+#   Limit, in seconds, until content becomes stale
+# NDND_MAX_RTE_MICROSEC=
+#   Value used to limit response time estimates kept by default strategy.
+# NDND_KEYSTORE_DIRECTORY=
+#   Directory readable only by ndnd where its keystores are kept
+#   Defaults to a private subdirectory of /var/tmp
+# NDND_LISTEN_ON=
+#   List of ip addresses to listen on; defaults to wildcard
+# NDND_AUTOREG=
+#   List of prefixes to auto-register on new faces initiated by peers
+#   example: NDND_AUTOREG=ndn:/like/this,ndn:/and/this
+# NDND_PREFIX=
+#   A prefix stem to use for generating guest prefixes
+
+##################
+# ndnr parameters 
+##################
+#
+# NDNR_DEBUG=WARNING
+#   Debug logging level:
+#   NONE - no messages
+#   SEVERE - severe, probably fatal, errors
+#   ERROR - errors
+#   WARNING - warnings
+#   INFO - informational messages
+#   FINE, FINER, FINEST - debugging/tracing
+# NDNR_DIRECTORY=/var/lib/ndnx/repo
+#   Directory where ndnr data is kept
+#   Defaults to current directory
+#   Ignored in config file
+# NDNR_GLOBAL_PREFIX=
+#   NDNx URI representing the prefix where data/policy.xml is stored.
+#   Only meaningful if no policy file exists at startup.
+# NDNR_START_WRITE_SCOPE_LIMIT=3
+#   0..3 (default 3) Process start-write(-checked) interests with a scope
+#   not exceeding the given value.  0 is effectively read-only. 3 indicates unlimited.
+# NDNR_BTREE_MAX_FANOUT=1999
+#   4..9999 (default 1999) Maximum number of entries within a node.
+# NDNR_BTREE_MAX_LEAF_ENTRIES=1999
+#   4..9999 (default 1999) Maximum number of entries within a node at level 0.
+# NDNR_BTREE_MAX_NODE_BYTES=2097152
+#   1024..8388608 (default 2097152) Maximum node size (bytes).
+# NDNR_BTREE_NODE_POOL=512
+#   16..2000000 (default 512) Maximum number of btree nodes in memory.
+# NDNR_CONTENT_CACHE=4201
+#   16..2000000 (default 4201) Maximum number of ContentObjects cached in memory.
+# NDNR_MIN_SEND_BUFSIZE=16384
+#   Minimum in bytes for output socket buffering.
+# NDNR_PROTO=unix
+#   Specify 'tcp' to connect to ndnd using tcp instead of unix ipc.
+# NDNR_LISTEN_ON=
+#   List of ip addresses to listen on for status; defaults to localhost addresses.
+# NDNR_STATUS_PORT=
+#   Port to use for status server; default is to not serve status.
