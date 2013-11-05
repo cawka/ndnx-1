@@ -1,3 +1,9 @@
+ndnx (0.2~rc1-1ppa4~precise1) precise; urgency=low
+
+  * Fixing section for the ndnx-dev package
+
+ -- Alexander Afanasyev <alexander.afanasyev@ucla.edu>  Tue, 05 Nov 2013 15:52:53 -0800
+
 ndnx (0.2~rc1-1ppa3~precise1) precise; urgency=low
 
   * Adding upstrart script for ndnd and ndnr (disabling ndndstart/ndndstop)

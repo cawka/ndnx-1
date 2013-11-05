@@ -17,7 +17,7 @@ Vcs-Git: git://github.com/named-data/ndnx.git
 Vcs-Browser: http://github.com/named-data/ndnx
 
 Package: ndnx-dev
-Section: netdevel
+Section: libdevel
 Architecture: i386 amd64
 Depends: ndnx (= ${binary:Version}), 
  ${misc:Depends},
