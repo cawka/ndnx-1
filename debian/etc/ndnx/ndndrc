@@ -66,7 +66,7 @@
 #   Directory where ndnr data is kept
 #   Defaults to current directory
 #   Ignored in config file
-# NDNR_GLOBAL_PREFIX=
+# NDNR_GLOBAL_PREFIX=/private/repo
 #   NDNx URI representing the prefix where data/policy.xml is stored.
 #   Only meaningful if no policy file exists at startup.
 # NDNR_START_WRITE_SCOPE_LIMIT=3

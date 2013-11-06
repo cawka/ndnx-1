@@ -1,3 +1,9 @@
+ndnx (0.2~rc1-1ppa5~precise1) precise; urgency=low
+
+  * Making repo start by default in /private/repo
+
+ -- Alexander Afanasyev <alexander.afanasyev@ucla.edu>  Tue, 05 Nov 2013 23:29:42 -0800
+
 ndnx (0.2~rc1-1ppa4~precise1) precise; urgency=low
 
   * Fixing section for the ndnx-dev package
