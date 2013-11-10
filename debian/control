@@ -21,14 +21,17 @@ Section: libdevel
 Architecture: i386 amd64
 Depends: ndnx (= ${binary:Version}), 
  ${misc:Depends},
- libssl-dev (>=1.0.1)
-Description: NDNx library and ndnd forwarding daemon
+ libssl-dev (>=1.0.1),
+ libpcap-dev (>=1.1.1),
+ libxml2-dev (>=2.7.8),
+ libexpat1-dev (>=2.0.1)
+Description: Development package for NDNx
+ Header files and libraries for NDNx package
 
 Package: ndnx-repo
 Section: net
 Architecture: i386 amd64
 Depends: ndnx (= ${binary:Version}), 
- ${shlibs:Depends},
  ${misc:Depends}
 Description: Repo daemon meta package
 
