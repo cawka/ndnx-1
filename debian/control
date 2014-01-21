@@ -35,10 +35,17 @@ Depends: ndnx (= ${binary:Version}),
  ${misc:Depends}
 Description: Repo daemon meta package
 
+Package: ndnd
+Section: net
+Architecture: i386 amd64
+Depends: ndnx (= ${binary:Version}),
+ ${misc:Depends}
+Description: NDN daemon
+
 Package: ndnx
 Section: net
 Architecture: i386 amd64
 Pre-Depends: adduser
 Depends: ${shlibs:Depends},
  ${misc:Depends}
-Description: NDNx library and ndnd forwarding daemon
+Description: NDNx library and tools
