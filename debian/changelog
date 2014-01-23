@@ -1,3 +1,9 @@
+ndnx (0.2-1ppa3~1saucy1) saucy; urgency=low
+
+  * Split ndnx package into ndnx (only tools) and ndnd (daemon)
+
+ -- Alexander Afanasyev <alexander.afanasyev@ucla.edu>  Thu, 23 Jan 2014 14:17:17 -0800
+
 ndnx (0.2-1ppa1~1saucy1) saucy; urgency=low
 
   * Making release for saucy
